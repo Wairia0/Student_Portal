@@ -3,10 +3,14 @@
 import os
 import sys
 
+import sys
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent
+sys.path.append(str(BASE_DIR / "student_portal"))
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'student_portal.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'student_portal.student_portal.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
